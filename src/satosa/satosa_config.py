@@ -147,7 +147,7 @@ class SATOSAConfig(object):
         """
 
         try:
-            with open(os.path.abspath(config_file)) as f:
+            with open(os.path.abspath(config_file), encoding="utf-8") as f:
                 return yaml_load(f.read())
         except YAMLError as exc:
             logger.error("Could not parse config as YAML: {}".format(exc))
